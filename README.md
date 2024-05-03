@@ -22,6 +22,7 @@ This should generate following files under `cache` directory:
 - referring expression database: `std_refdb_<dataset>_<split_by>.json`
 - critical objects database: `std_ctxdb_<dataset>_<split_by>.json`
 
+# we use clip+ to filter proposal
 
 ## Train
 **Train with binary XE loss:**
