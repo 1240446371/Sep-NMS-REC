@@ -1,3 +1,4 @@
+The following part we all follow the instructions of Ref-NMS：https://github.com/ChopinSharp/ref-nms
 # Data Preparation
 `data` directory is organized as follows:
 ```
@@ -27,4 +28,4 @@ Follow the instructions in [MAttNet](https://github.com/lichengunc/MAttNet) unti
 ln -s $MATTNET_ROOT_DIR/cache/feats/<dataset>_<split_by>/mrcn/res101_coco_minus_refer_notime data/head_feats/<dataset>_<split_by>
 ```
 
-Download from [Google Drive](https://drive.google.com/drive/folders/1BPqWW0LrAEBFna7b-ORF2TcrY7K_DDvM?usp=sharing) or [Baidu Disk](https://pan.baidu.com/s/1G4k7APKSUs-_5StXoYaNrA) (extraction code: 5a9r). Extract `data` directory and move the contents to current directory.
+Download from [Google Drive] provided by refnms (https://drive.google.com/drive/folders/1BPqWW0LrAEBFna7b-ORF2TcrY7K_DDvM?usp=sharing) or [Baidu Disk](https://pan.baidu.com/s/1G4k7APKSUs-_5StXoYaNrA) (extraction code: 5a9r). Extract `data` directory and move the contents to current directory.
