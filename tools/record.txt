@@ -1,0 +1,22 @@
+1¡¢build ctx and gt box
+
+ybclip.py £ºyangbo µÄ  clip finetune  Ä£ÐÍ 
+Refnms£ºpython tools/build_refdb.py && python tools/build_ctxdb.py
+Clipyb£ºpython  "/home/wj/code/ref_nms_main/tools/ybclip_ann_sent08.py"  or ybybclip_ann_sent.py  is same 
+clip sentence :  "/home/wj/code/ref_nms_main/tools/build_ctxclip_ann_sen.py"   
+clip token :  "/home/wj/code/ref_nms_main/tools/build_ctxclip_ann.py"  and with  box  visualization
+
+
+file:
+
+
+
+2¡¢train with label obtained by above
+
+train£º python "/home/wj/code/ref_nms_main/tools/train_att_vanilla1.py"   or  train_att_vanilla.py  or train_att_vanillacocog.py
+
+model path:
+
+
+
+3¡¢test the model  , 
