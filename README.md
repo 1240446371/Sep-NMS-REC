@@ -1,5 +1,5 @@
-# Ref-NMS
-Official codebase for AAAI 2021 paper ["Ref-NMS: Breaking Proposal Bottlenecks in Two-Stage Referring Expression Grounding"](https://arxiv.org/abs/2009.01449).
+
+We follow the settings of ：Official codebase for AAAI 2021 paper ["Ref-NMS: Breaking Proposal Bottlenecks in Two-Stage Referring Expression Grounding"](https://arxiv.org/abs/2009.01449).
 
 ## Prerequisites
 The following dependencies should be enough. See [environment.yml](environment.yml) for complete environment settings.
@@ -77,12 +77,4 @@ We provide pre-trained model weights as long as the corresponding **MAttNet-styl
 
 [[Google Drive]](https://drive.google.com/drive/folders/1BPqWW0LrAEBFna7b-ORF2TcrY7K_DDvM?usp=sharing) [[Baidu Disk]](https://pan.baidu.com/s/1G4k7APKSUs-_5StXoYaNrA) (extraction code: 5a9r)
 
-## Citation
-```
-@inproceedings{chen2021ref,
-  title={Ref-NMS: Breaking Proposal Bottlenecks in Two-Stage Referring Expression Grounding},
-  author={Chen, Long and Ma, Wenbo and Xiao, Jun and Zhang, Hanwang and Chang, Shih-Fu},
-  booktitle={AAAI},
-  year={2021}
-}
-```
+ 
