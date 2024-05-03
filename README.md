@@ -22,56 +22,24 @@ This should generate following files under `cache` directory:
 - referring expression database: `std_refdb_<dataset>_<split_by>.json`
 - critical objects database: `std_ctxdb_<dataset>_<split_by>.json`
 
-# we use clip+ to filter proposal
 
-## Train
-**Train with binary XE loss:**
-```
-PYTHONPATH=$PWD python tools/train_att_vanilla.py --dataset refcoco --split-by unc
-```
+# CLIP† relatedness 
+1、 “Ybclip” file is the modified clip model (CLIP†)we used in our paper. The original code is following:  BoO-18/GR-GAN: GRADUAL REFINEMENT TEXT-TO-IMAGE GENERATION (github.com)
+2、 We use  "tools/ybclip_ann_sent.py" to filter referent and context proposals, the output is the simliarity score. 
+This code corresponds to the  CLIP† relatedness mentioned in the paper.
 
-**Train with ranking loss:**
-```
-PYTHONPATH=$PWD python tools/train_att_rank.py --dataset refcoco --split-by unc
-```
-We use tensorboard to monitor the training process. The log file can be found in `tb` folder.
 
-## Evaluate Recall
-**Save Ref-NMS proposals:**
-```
-PYTHONPATH=$PWD python tools/save_ref_nms_proposals.py --dataset refcoco --split-by unc --tid <tid> --m <loss_type>
-```
-`<loss_type>` can be either `att_vanilla` for binary XE loss or `att_rank` for rank loss.
 
-**Evaluate recall on referent object:**
-```
-PYTHONPATH=$PWD python tools/eval_proposal_hit_rate.py --m <loss_type> --dataset refcoco --split-by unc --tid <tid> --conf <conf>
-```
-`conf` parameter is the score threshold used to filter Ref-NMS proposals. It should be picked properly so that the recall of the referent is high while the number of proposals per expression is around 8-10.
+# Ctx-relatedness 
+We follow the code of Ref-NMS: ChopinSharp/ref-nms: Official codebase for "Ref-NMS: Breaking Proposal Bottlenecks in Two-Stage Referring Expression Grounding" (github.com)
 
-**Evaluate recall on critical objects:**
-```
-PYTHONPATH=$PWD python tools/eval_proposal_ctx_recall.py --m <loss_type> --dataset refcoco --split-by unc --tid <tid> --conf <conf>
-```
+# Ref-relatedness
+“lib/my_sep_qkad_predictor.py” incoporate the  Ctx-relatedness and  Ref-relatedness module
 
-## Evaluate REG Performance
-Save MAttNet-style detection file:
-```
-PYTHONPATH=$PWD python tools/save_matt_dets.py --dataset refcoco --split-by unc --m <loss_type> --tid <tid> --conf <conf>
-```
-This script will save all the detection information needed for downstream REG evaluation to `output/matt_dets_<loss_type>_<tid>_<dataset>_<split_by>_<top_N>.json`.
+# other codings：
+containing the training and test part， you can follow the RefNMS：
+ChopinSharp/ref-nms: Official codebase for "Ref-NMS: Breaking Proposal Bottlenecks in Two-Stage Referring Expression Grounding" (github.com)![image](https://github.com/1240446371/Sep-NMS-REC/assets/44427801/7103d919-d40b-45e3-a9b3-1855d7259156)
 
-We provide altered version of [MAttNet](https://github.com/ChopinSharp/MAttNet) and [CM-A-E](https://github.com/ChopinSharp/CM-Erase-REG) for downstream REG task evaluation. 
-
-First, follow the README in each repository to reproduce the original reported results as baseline (c.f. Table 2 in our paper). Then, run the following commands to evaluate on REC and RES task:
-```
-# Evaluate REC performance
-python tools/extract_mrcn_ref_feats.py --dataset refcoco --splitBy unc --tid <tid> --top-N 0 --m <loss_type>
-python tools/eval_ref.py --dataset refcoco --splitBy unc --tid <tid> --top-N 0 --m <loss_type>
-# Evaluate RES performance
-python tools/run_propose_to_mask.py --dataset refcoco --splitBy unc --tid <tid> --top-N 0 --m <loss_type>
-python tools/eval_ref_masks.py --dataset refcoco --splitBy unc --tid <tid> --top-N 0 --m <loss_type> --save
-```
 
 ## Pretrained Models
 We provide pre-trained model weights as long as the corresponding **MAttNet-style detection file** (note the MattNet-style detection files can be directly used to evaluate downstream REG task performance). With these files, one can easily reproduce our reported results.
