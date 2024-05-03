@@ -36,7 +36,7 @@ We follow the code of Ref-NMS: ChopinSharp/ref-nms: Official codebase for "Ref-N
 
 # other codings：
 containing the training and test part， you can follow the RefNMS：
-ChopinSharp/ref-nms: Official codebase for "Ref-NMS: Breaking Proposal Bottlenecks in Two-Stage Referring Expression Grounding" (github.com)![image](https://github.com/1240446371/Sep-NMS-REC/assets/44427801/7103d919-d40b-45e3-a9b3-1855d7259156)
+ChopinSharp/ref-nms: Official codebase for "Ref-NMS: Breaking Proposal Bottlenecks in Two-Stage Referring Expression Grounding" (github.com)(https://github.com/1240446371/Sep-NMS-REC/assets/44427801/7103d919-d40b-45e3-a9b3-1855d7259156)
 
 ## Pretrained Models
 We provide pre-trained model weights as long as the corresponding **MAttNet-style detection file** (note the MattNet-style detection files can be directly used to evaluate downstream REG task performance). With these files, one can easily reproduce our reported results.
