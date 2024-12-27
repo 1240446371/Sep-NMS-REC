@@ -24,19 +24,19 @@ This should generate following files under `cache` directory:
 
 
 # CLIP† relatedness 
-1、 “Ybclip” file is the modified clip model (CLIP†)we used in our paper. The original code is following:  BoO-18/GR-GAN: GRADUAL REFINEMENT TEXT-TO-IMAGE GENERATION (github.com)
+1、 “Ybclip” file is the modified clip model (CLIP†)we used in our paper. The original code is following:  BoO-18/GR-GAN: GRADUAL REFINEMENT TEXT-TO-IMAGE GENERATION (github.com) [BoO-18/GR-GAN](https://github.com/BoO-18/GR-GAN)
 2、 We use  "tools/ybclip_ann_sent.py" to filter referent and context proposals, the output is the simliarity score. 
 This code corresponds to the  CLIP† relatedness mentioned in the paper.
 
 # Ctx-relatedness 
-We follow the code of Ref-NMS: ChopinSharp/ref-nms: Official codebase for "Ref-NMS: Breaking Proposal Bottlenecks in Two-Stage Referring Expression Grounding" (github.com)
+We follow the code of Ref-NMS: ChopinSharp/ref-nms: Official codebase for "Ref-NMS: Breaking Proposal Bottlenecks in Two-Stage Referring Expression Grounding" [Ref-NMS](https://github.com/ChopinSharp/ref-nms)
 
 # Ref-relatedness
 “lib/my_sep_qkad_predictor.py” incoporate the  Ctx-relatedness and  Ref-relatedness module
 
 # other codings：
 containing the training and test part， you can follow the RefNMS：
-ChopinSharp/ref-nms: Official codebase for "Ref-NMS: Breaking Proposal Bottlenecks in Two-Stage Referring Expression Grounding" (github.com)(https://github.com/1240446371/Sep-NMS-REC/assets/44427801/7103d919-d40b-45e3-a9b3-1855d7259156)
+ChopinSharp/ref-nms: Official codebase for "Ref-NMS: Breaking Proposal Bottlenecks in Two-Stage Referring Expression Grounding" (github.com)
 
 ## Pretrained Models
 We provide pre-trained model weights as long as the corresponding **MAttNet-style detection file** (note the MattNet-style detection files can be directly used to evaluate downstream REG task performance). With these files, one can easily reproduce our reported results.
