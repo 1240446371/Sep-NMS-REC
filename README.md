@@ -11,28 +11,27 @@ The following dependencies should be enough. See [environment.yml](environment.y
 
 ## Data Preparation
 Follow instructions in `data/README.md` to setup `data` directory. 
-
-Run following script to setup `cache` directory:
-```
-sh scripts/prepare_data.sh
-```
-This should generate following files under `cache` directory:
-- vocabulary file: `std_vocab_<dataset>_<split_by>.txt`
-- selected GloVe feature: `std_glove_<dataset>_<split_by>.npy`
-- referring expression database: `std_refdb_<dataset>_<split_by>.json`
-- critical objects database: `std_ctxdb_<dataset>_<split_by>.json`
-
+## Initial Filtering
+This part is identical to the content in Ref-NMS. So we follow the code of Ref-NMS: ChopinSharp/ref-nms: Official codebase for "Ref-NMS: Breaking Proposal Bottlenecks in Two-Stage Referring Expression Grounding" [Ref-NMS](https://github.com/ChopinSharp/ref-nms) 
 
 # CLIP† relatedness 
-1、 “Ybclip” file is the modified clip model (CLIP†)we used in our paper. The original code is following:  BoO-18/GR-GAN: GRADUAL REFINEMENT TEXT-TO-IMAGE GENERATION (github.com) [BoO-18/GR-GAN](https://github.com/BoO-18/GR-GAN)
-2、 We use  "tools/ybclip_ann_sent.py" to filter referent and context proposals, the output is the simliarity score. 
-This code corresponds to the  CLIP† relatedness mentioned in the paper.
+1、 CLIP† denotes a variant of the CLIP model that has been fine-tuned on the MS COCO dataset. We utilze the ITM module in GR-GAN paper. The original code is following:  BoO-18/GR-GAN: GRADUAL REFINEMENT TEXT-TO-IMAGE GENERATION (github.com) [BoO-18/GR-GAN](https://github.com/BoO-18/GR-GAN)
+
+2、 The following code corresponds to the  CLIP† relatedness mentioned in our paper. CLIP† relatedness aims to filter referent and context proposals, the output is the simliarity score. 
+```
+tools/ybclip_ann_sent.py
+```
 
 # Ctx-relatedness 
-We follow the code of Ref-NMS: ChopinSharp/ref-nms: Official codebase for "Ref-NMS: Breaking Proposal Bottlenecks in Two-Stage Referring Expression Grounding" [Ref-NMS](https://github.com/ChopinSharp/ref-nms)
-
+We follow the code of Ref-NMS: ChopinSharp/ref-nms: Official codebase for "Ref-NMS: Breaking Proposal Bottlenecks in Two-Stage Referring Expression Grounding" [Ref-NMS](https://github.com/ChopinSharp/ref-nms) In their 
+```
+refnms/lib/predictor.py"
+```
 # Ref-relatedness
 “lib/my_sep_qkad_predictor.py” incoporate the  Ctx-relatedness and  Ref-relatedness module
+```
+refnms/lib/predictor.py
+```
 
 # other codings：
 containing the training and test part， you can follow the RefNMS：
