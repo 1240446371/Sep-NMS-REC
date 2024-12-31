@@ -44,7 +44,7 @@ tools/my_qkad_train2.py
 # other codings：
 The tools and lib directories contain various experiments and attempts of our method under different settings and parameter configurations.
 
-containing the test part， you can follow the RefNMS：
+For the test part， you can follow the RefNMS：
  [Ref-NMS](https://github.com/ChopinSharp/ref-nms) 
 
 ## Pretrained Models
