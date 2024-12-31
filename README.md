@@ -30,8 +30,10 @@ The Ctx-Relatedness module is identical to the  [Ref-NMS](https://github.com/Cho
 
 In our codebase, the architectures for both the Ctx-Relatedness and Ref-Relatedness models can be found in the following directory:
 ```
-“lib/my_sep_qkad_predictor.py” incoporate the  Ctx-relatedness and  Ref-relatedness module
+“lib/my_sep_qkad_predictor.py” 
 ```
+which incoporates the  Ctx-relatedness and  Ref-relatedness module
+
 # Train：
 Train Ctx-relatedness &&  Ref-relatedness with binary XE loss:
 ```
