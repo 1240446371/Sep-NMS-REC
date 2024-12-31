@@ -22,20 +22,25 @@ This part is identical to the content in Ref-NMS. So we follow the code of Ref-N
 tools/ybclip_ann_sent.py
 ```
 
-# Ctx-relatedness 
-We follow the code of Ref-NMS: ChopinSharp/ref-nms: Official codebase for "Ref-NMS: Breaking Proposal Bottlenecks in Two-Stage Referring Expression Grounding" [Ref-NMS](https://github.com/ChopinSharp/ref-nms) In their 
+# Ctx-relatedness &&  Ref-relatedness
+The Ctx-Relatedness module is identical to the  [Ref-NMS](https://github.com/ChopinSharp/ref-nms) model. The original code for this component can be found in the following directory of the Ref-NMS codebase.
 ```
-refnms/lib/predictor.py"
+/lib/predictor.py"
 ```
-# Ref-relatedness
+
+In our codebase, the architectures for both the Ctx-Relatedness and Ref-Relatedness models can be found in the following directory:
+```
 “lib/my_sep_qkad_predictor.py” incoporate the  Ctx-relatedness and  Ref-relatedness module
 ```
-refnms/lib/predictor.py
+# Train：
+Train Ctx-relatedness &&  Ref-relatedness with binary XE loss:
+```
+tools/my_qkad_train2.py
 ```
 
 # other codings：
-containing the training and test part， you can follow the RefNMS：
-ChopinSharp/ref-nms: Official codebase for "Ref-NMS: Breaking Proposal Bottlenecks in Two-Stage Referring Expression Grounding" (github.com)
+containing the test part， you can follow the RefNMS：
+ [Ref-NMS](https://github.com/ChopinSharp/ref-nms) 
 
 ## Pretrained Models
 We provide pre-trained model weights as long as the corresponding **MAttNet-style detection file** (note the MattNet-style detection files can be directly used to evaluate downstream REG task performance). With these files, one can easily reproduce our reported results.
