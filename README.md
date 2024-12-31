@@ -1,5 +1,6 @@
 
-We follow the settings of ：Official codebase for AAAI 2021 paper ["Ref-NMS: Breaking Proposal Bottlenecks in Two-Stage Referring Expression Grounding"](https://arxiv.org/abs/2009.01449).
+We follow the settings of ：Official codebase for AAAI 2021 paper ["Ref-NMS: Breaking Proposal Bottlenecks in Two-Stage Referring Expression Grounding"](https://arxiv.org/abs/2009.01449). 
+Please ensure that the parameter settings in the code adhere to the experimental details provided in the Sep-NMS paper.
 
 ## Prerequisites
 The following dependencies should be enough. See [environment.yml](environment.yml) for complete environment settings.
@@ -41,6 +42,8 @@ tools/my_qkad_train2.py
 ```
 
 # other codings：
+The tools and lib directories contain various experiments and attempts of our method under different settings and parameter configurations.
+
 containing the test part， you can follow the RefNMS：
  [Ref-NMS](https://github.com/ChopinSharp/ref-nms) 
 
